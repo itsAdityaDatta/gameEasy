@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height">
     <title>GameEasy</title>
     <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
@@ -13,32 +13,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+    
+    <script type="text/javascript" src="/js/qrcode.js"></script>
+
+
     <link rel="stylesheet" type="text/css" href="homeStyle.css">
     <script src="homeScript.js"></script> 
-    
   
+    <script type='module' src='scan.js'></script>
+       
 </head>
 
 <body>
-    <div class='heading'>
-        <div class='title'>GameEasy</div>
-    </div>
-    <div style="height: 250px;" class='matter1'>
-        <div href="" class="typewrite" data-period="2000" data-type='[ "Gaming made easy", "Connect your phone", "Open sourced"]'>   
-        <span class="wrap"></span></div>
-        <hr class='sexy_line'>
-        <a href="" class="waves-effect waves-light btn"><i class="material-icons left">people</i>Github</a>
-        <a href="" class="waves-effect waves-light btn"><i class="material-icons left">attach_money</i>Support</a>
-        <br>
-        <div id='support'>
+    <div class='wrapper'>
+        <div class='heading'>
+            <div class='title'>GameEasy</div>
         </div>
+        <div style="height: 230px;" class='matter1'>
+            <div href="" class="typewrite" data-period="2000" data-type='[ "Gaming made easy", "Connect your phone", "Open sourced"]'>   
+                <span class="wrap"></span>
+            </div>
+            <hr class='sexy_line'>
+            <a href="" class="waves-effect waves-light btn"><i class="material-icons left">people</i>Github</a>
+            <a href="" class="waves-effect waves-light btn"><i class="material-icons left">attach_money</i>Support</a>
+            <br>
+            <div id='support'></div>
+            <br><br>
+            <a id="scan" class="waves-effect waves-light btn">open Scanner</a>
+            <div id='scanner'>
+                <video  id="video" autoplay></video>
+            </div>
 
-        <div id='connect' class="z-depth-5">
-            Connection ID : 10533
+            <div id='barContainer'>
+                <div style="display: inline-block; border: solid 2px #08f;padding: 20px; background-color: white;">
+                    <div id="qrcode" style="width:170px; height:170px;"></div>
+                    <div id="barcodeKeNeeche"></div>
+                </div>
+            </div>
+            <div id='connect'>
+                Scan the QR code from your phone
+            </div>
         </div>
+        
+        <div style="height: 300px" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-53.95,150.09 C303.27,132.32 204.51,0.10 500.22,0.10 L500.00,150.00 L296.50,159.96 Z" style="stroke: none; fill: #08f;"></path></svg></div>
+        <div style="height: 3000px;background-color: #08f;transform: translateY(-5px)"></div>
     </div>
-    <div style="height: 300px" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-53.95,150.09 C303.27,132.32 204.51,0.10 500.22,0.10 L500.00,150.00 L296.50,159.96 Z" style="stroke: none; fill: #08f;"></path></svg></div>
-    <div style="height: 300px;background-color: #08f;transform: translateY(-5px)"></div>
-
 </body>
 </html>

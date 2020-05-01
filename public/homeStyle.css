@@ -1,8 +1,11 @@
 body{
     margin: 0;
     margin-top: 40px;
+    overflow: hidden;
 }
-
+.wrapper{
+    overflow: hidden;
+}
 a{
     text-decoration: none;
     color: rgb(0, 86, 161);
@@ -58,16 +61,62 @@ a{
 }
 
 #support{
+    cursor: default;
     margin-top: 10px;
-    font-size: 30px;
+    font-size: 20px;
+    border: solid 2px #08b;
+    border-radius: 5px;
+    display: inline-block;
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color: white;
 }
 
 #connect{
-    font-size: 20px;
+    font-size: 16px;
     width: 100%;
     background-color: #1b1b1b;
     color: white;
     position: fixed;
     bottom: 0;
-    display: block;
+    display: none;
+    z-index: 101;
+}
+
+#barContainer{
+    width: 100%;
+    display: none;
+    background-color: transparent;
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+}
+
+#barcodeKeNeeche{
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -20px;
+    width: 170px;
+    padding-bottom: 150px;
+    background-color: white;
+}
+
+#scanner{
+    display: none;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+}
+
+#scan{
+    display: none;
+    font-size: 20px;
+    position: fixed;
+    bottom: 0px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
 }

@@ -58,12 +58,12 @@ window.onload = function() {
 
     if (window.DeviceOrientationEvent) {
         window.addEventListener("deviceorientation", handleOrientation, true);
+        document.getElementById('support').style.color = "rgb(0,150,40)";
         document.getElementById("support").innerHTML = "Device Supported";
     }
     else{
-        
         document.getElementById('support').style.color = "#ff0000";
-        document.getElementById("supprt").innerHTML = "Device Not Supported";
+        document.getElementById("support").innerHTML = "Device Not Supported";
     }
 
     function handleOrientation(event) {
@@ -73,4 +73,28 @@ window.onload = function() {
         var gamma    = event.gamma;
     }
 
-};
+    //____________________________________________________ GENERATE QR CODE______________________________________________________________
+
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        width : 170,
+        height : 170
+    });
+    
+    function makeCode () {
+        qrcode.makeCode("10553");
+    }
+    makeCode();
+    //_______________________________________________________IF DEVICE = PHONE ____________________________________________________________
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+        
+        document.getElementById('scan').style.display = 'block';
+    }
+    else{
+        document.getElementById('connect').style.display = 'block';
+        document.getElementById('barContainer').style.display = 'block';
+    }
+
+
+
+}
