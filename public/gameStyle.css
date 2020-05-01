@@ -1,0 +1,31 @@
+body{
+    margin: 0;
+    margin-top: 40px;
+    overflow: hidden;
+}
+
+.wrapper{
+    overflow: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(0, 86, 161);
+}
+
+.title{
+    cursor: default;
+    position: fixed;
+    z-index: 101;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #1b1b1b;
+    font-family: 'Abel';
+    font-size: 20px;
+    padding: 2px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    font-family: 'Economica', sans-serif;
+    color: white;
+}

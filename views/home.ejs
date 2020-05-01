@@ -14,12 +14,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     
-    <script type="text/javascript" src="/js/qrcode.js"></script>
-
-
     <link rel="stylesheet" type="text/css" href="homeStyle.css">
+    
+    <script src="/socket.io/socket.io.js"></script>
     <script src="homeScript.js"></script> 
   
+    <script type="text/javascript" src="/js/qrcode.js"></script>
     <script type='module' src='scan.js'></script>
        
 </head>
@@ -54,9 +54,9 @@
                 Scan the QR code from your phone
             </div>
         </div>
-        
         <div style="height: 300px" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-53.95,150.09 C303.27,132.32 204.51,0.10 500.22,0.10 L500.00,150.00 L296.50,159.96 Z" style="stroke: none; fill: #08f;"></path></svg></div>
         <div style="height: 3000px;background-color: #08f;transform: translateY(-5px)"></div>
     </div>
+
 </body>
 </html>

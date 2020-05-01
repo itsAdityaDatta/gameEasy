@@ -1,3 +1,5 @@
+let socket = io();
+let roomNum = null;
 
 //______________________________________________________________________ Typewriter Effect_________________________________________________________
 
@@ -57,7 +59,6 @@ window.onload = function() {
     document.body.appendChild(css);
 
     if (window.DeviceOrientationEvent) {
-        window.addEventListener("deviceorientation", handleOrientation, true);
         document.getElementById('support').style.color = "rgb(0,150,40)";
         document.getElementById("support").innerHTML = "Device Supported";
     }
@@ -66,25 +67,21 @@ window.onload = function() {
         document.getElementById("support").innerHTML = "Device Not Supported";
     }
 
-    function handleOrientation(event) {
-        var absolute = event.absolute;
-        var alpha    = event.alpha;
-        var beta     = event.beta;
-        var gamma    = event.gamma;
-    }
-
     //____________________________________________________ GENERATE QR CODE______________________________________________________________
 
     var qrcode = new QRCode(document.getElementById("qrcode"), {
         width : 170,
         height : 170
     });
-    
+
+    roomNum = Math.floor(Math.random() * 99999999) + 100000000;
+
     function makeCode () {
-        qrcode.makeCode("10553");
+        let roomNumString = String(roomNum);
+        qrcode.makeCode(roomNumString);
     }
     makeCode();
-    //_______________________________________________________IF DEVICE = PHONE ____________________________________________________________
+    //____________________________________________________ IF DEVICE = PHONE ____________________________________________________________
 
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
         
@@ -93,8 +90,12 @@ window.onload = function() {
     else{
         document.getElementById('connect').style.display = 'block';
         document.getElementById('barContainer').style.display = 'block';
+        sessionStorage.setItem('roomName', roomNum);
+        socket.emit('room',roomNum);
+        console.log(roomNum);
     }
-
-
-
 }
+
+socket.on('joinRoom',()=>{
+    setTimeout(function(){document.location.href = "/game"},0);
+});
