@@ -86,6 +86,7 @@ window.onload = function() {
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
         
         document.getElementById('scan').style.display = 'block';
+        document.getElementById('support').style.display = 'inline-block';
     }
     else{
         document.getElementById('connect').style.display = 'block';

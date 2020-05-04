@@ -42,4 +42,8 @@ io.on('connection', (socket) => {
     socket.on('room',(roomName)=>{
         socket.join(roomName);
     });
+
+    socket.on('alpha',(alpha,roomName)=>{
+        socket.broadcast.to(roomName).emit('alpha',alpha);
+    }); 
 });
